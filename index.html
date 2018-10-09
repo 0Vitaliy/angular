@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-http-service-production</title>
+  
+
+  <script src="https://code.angularjs.org/snapshot/angular.min.js"></script>
+  <script src="script.js"></script>
+  
+
+  
+</head>
+<body ng-app="httpExample">
+  <div ng-controller="FetchController">
+  
+  <button ng-click="fetch()">Get</button><br>
+ 
+    <style>
+      .product{
+        width:400px; 
+        border: 1px solid burlywood;
+        margin: 10px;
+        
+      }
+      h2{
+        font-size:14px;
+        
+      }
+      img{
+        width:200px;
+        }
+      span:nth-of-type(2){
+        color:red;
+        margin-left: 20px;
+        }
+            }
+    </style>
+    Пошук <input type="text" ng-model="member">
+    <div class="product"  ng-repeat="index in products | filter:{name:member}" >
+                  
+                   <h2> {{index.name}}</h2>
+                   <img src='{{index.img}}'/>
+                   <span>Бренд-{{index.brand}}</span>
+                   <span>{{index.price}}</span>
+    </div>
+    
+  <pre>http status code: {{status}}</pre>
+  
+</div>
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
